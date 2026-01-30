@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+        * {
+            box-sizing: border-box;
+        }
+        .box {
+            border: dotted 2px rgb(96, 139, 168);
+            width: 500px;
+            display: flex;
+            flex-direction: row;
+        }
+        .box > div {
+            border: solid 2px rgb(96, 139, 168);
+            border-radius:5px;
+            
+        }
+        .one {
+            flex-basis: 200px;
+            flex-shrink: 1;
+        
+        }
+        .two {
+            flex-basis: 200px; /* over riding the width*/
+            flex-shrink: 1; /* it will shrink*/
+        }
+        .three {
+            flex-basis: 200px;
+            flex-shrink: 1;
+            
+        }
+    </style>
+<body>
+     <div class = "box">
+        <div class="one">one</div>
+        <div class="two">two</div>
+        <div class="three">three</div>
+    </div>
+</body>
+</html>

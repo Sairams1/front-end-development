@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My First Todo</title>
+
+  <style>
+    body {
+      font-family: Arial;
+    }
+
+    li {
+      margin: 10px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>My Todo List</h2>
+
+  <!-- Input box -->
+  <input type="text" id="todoInput">
+
+  <!-- Add button -->
+  <button onclick="addTodo()">Add</button>
+
+  <!-- List -->
+  <ul id="todoList"></ul>
+
+  <script>
+    // This function runs when button is clicked
+    function addTodo() {
+
+      // 1. Get input box
+      let input = document.getElementById("todoInput");
+
+      // 2. Get what user typed
+      let text = input.value;
+
+      // 3. If empty, stop
+      if (text === "") {
+        return;
+      }
+
+      // 4. Create list item
+      let li = document.createElement("li");
+
+      // 5. Put text inside li
+      li.innerText = text;
+
+      // 6. Create delete button
+      let btn = document.createElement("button");
+      btn.innerText = "Delete";
+
+      // 7. When delete clicked, remove li
+      btn.onclick = function () {
+        li.remove();
+      };
+
+      // 8. Add button inside li
+      li.appendChild(btn);
+
+      // 9. Show li inside ul
+      document.getElementById("todoList").appendChild(li);
+
+      // 10. Clear input box
+      input.value = "";
+    }
+  </script>
+
+</body>
+</html>
